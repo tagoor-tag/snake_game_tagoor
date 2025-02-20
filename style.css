@@ -9,8 +9,10 @@
 
 body {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     min-height: 100vh;
     background: linear-gradient(135deg, #eef8ff, hsl(217, 100%, 62%));
     animation: backgroundAnimation 10s infinite alternate;
@@ -22,7 +24,7 @@ body {
     }
 
     100% {
-        background: #A0C4FF;
+        background: #91d7ff;
     }
 }
 
@@ -39,7 +41,7 @@ body {
 }
 
 .wrapper:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .game-details {
@@ -73,7 +75,9 @@ body {
     height: 100%;
     display: grid;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-    background: #212837;
+    background: #2a2f48;
+    box-shadow: 0 0 10px #60cbff;
+    border: 1px solid red;
 }
 
 .play-board .food {
@@ -101,54 +105,50 @@ body {
 }
 
 .controls {
-    height: 80px;
     display: none;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
-    background: #293447;
-    border-top: 1px solid #394867;
+    background: transparent;
+
 }
 
 .controls button {
-    width: 24%;
-    padding: 2%;
-    background-color: transparent;
-    outline: none;
     border: none;
-    border-right: 1px solid #394867;
-    transition: all 0.3s;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(134, 134, 134);
+    /* box-shadow: 0px 0px 15px #1e2a38; */
+    cursor: pointer;
+    background: #0062ff;
 }
 
-.controls button:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
+
 
 .arrow-up-down {
     display: none;
-    width: 100%;
+    gap: 30px;
 }
 
-.arrow-up-down button {
-    height: 40px;
-    width: 100%;
-}
 
-.arrow-up-down button:first-child {
-    border-bottom: 1px solid black;
 
-}
+
 
 .controls i {
-    color: #b8c6dc;
+    color: white;
     text-align: center;
     cursor: pointer;
-    font-size: 1.3rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
+
+
 
 @media screen and (max-width: 800px) {
     .wrapper {
         width: 90vmin;
-        height: 115vmin;
+        height: 110vmin;
     }
 
     .game-details {
@@ -171,6 +171,6 @@ body {
     }
 
     .controls i {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
